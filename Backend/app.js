@@ -9,7 +9,13 @@ const cors = require("cors");
 const UserApi = require("./route/user");
 const TaskApi = require("./route/task");
 
-app.use(cors());
+app.use(cors(
+  {
+    origin:["http://deploy-task-1whq.vercel.app"],
+    methods:["POST", "GET"],
+    credentials:true,
+  }
+));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1", UserApi);
