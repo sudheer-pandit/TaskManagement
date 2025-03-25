@@ -12,7 +12,7 @@ function Sidebar() {
 const dispatch = useDispatch();
 const history = useNavigate();
 const user = useSelector((state)=> state.auth.user)
-console.log("user:-", user)
+console.log("user:-", user) 
     const data = [
         {title:"All tasks",
             icon: <CgNotes />,
@@ -48,7 +48,7 @@ const headers = {
 // console.log("headers: ", headers)
 useEffect(()=>{
 const fetch = async()=>{
- const response=  await axios.get("http://localhost:1000/api/v2/get-all-tasks",{
+ const response=  await axios.get(`${import.meta.env.VITE_BACKEND_URL}/v2/get-all-tasks`,{
     
     headers
 

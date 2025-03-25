@@ -22,7 +22,7 @@ setData({title: updatedData.title, desc: updatedData.desc})
   if(data.title === "" || data.desc ===""){
     alert("All fields are required")
   }else {
-    const res = await axios.post("http://localhost:1000/api/v2/create-task",data,{
+    const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/v2/create-task`,data,{
      headers
     })
     console.log("res: ", res.data.data);
@@ -38,7 +38,7 @@ setData({title: updatedData.title, desc: updatedData.desc})
     if(data.title === "" || data.desc ===""){
       alert("All fields are required")
     }else {
-      const res = await axios.put(`http://localhost:1000/api/v2/update-task/${updatedData.id}`,data,{
+      const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/v2/update-task/${updatedData.id}`,data,{
        headers
       })
       console.log("res: ", res.data.data);

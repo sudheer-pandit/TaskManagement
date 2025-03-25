@@ -23,7 +23,7 @@ function Signup() {
       if(Data.username ===""|| Data.email ==="" || Data.password ===""){
         alert("All fields are required")
       }else {
-      const res =   await axios.post("http://localhost:1000/api/v1/signin", Data)
+      const res =   await axios.post(`${import.meta.env.VITE_BACKEND_URL}/v1/signin`, Data)
       console.log("response from signup:", res);
       
       }

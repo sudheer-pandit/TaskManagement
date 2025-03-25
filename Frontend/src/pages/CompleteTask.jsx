@@ -11,7 +11,7 @@ function CompleteTask() {
   // console.log(headers)
 
   const fetch = async()=>{
-    const response=  await axios.get("http://localhost:1000/api/v2/get-complete-tasks",{
+    const response=  await axios.get(`${import.meta.env.VITE_BACKEND_URL}/v2/get-complete-tasks`,{
        headers
      })
     //  console.log("response", response)

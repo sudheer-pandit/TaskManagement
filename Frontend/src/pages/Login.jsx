@@ -4,6 +4,9 @@ import {useDispatch,useSelector } from "react-redux"
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios"
 import {authActions} from "../store/auth"
+// require("dotenv").config();
+
+
 const Login = () => {
 
   const [Data, setData] = useState({username:"",  password:""})
@@ -12,6 +15,7 @@ const Login = () => {
   const isLoggedin = ((state)=>state.auth.isLoggedIn);
 const user = useSelector((state)=> state.auth.user)
 
+console.log(import.meta.env.VITE_BACKEND_URL);
   
   if(isLoggedin === true){
     history("/")
@@ -25,10 +29,10 @@ const user = useSelector((state)=> state.auth.user)
      e.preventDefault()
      try {
        
-       if(Data.username ===""|| Data.password ===""){
+       if(Data.username ===""|| Data.password ===""){ 
          alert("All fields are required")
        }else {
-       const res =   await axios.post("http://localhost:1000/api/v1/login",
+       const res =   await axios.post("VITE_BACKEND_URL/v1/login",
         Data
       );
        console.log("response from login :", res.data.username);
