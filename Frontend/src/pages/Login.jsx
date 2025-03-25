@@ -32,7 +32,7 @@ console.log(import.meta.env.VITE_BACKEND_URL);
        if(Data.username ===""|| Data.password ===""){ 
          alert("All fields are required")
        }else {
-       const res =   await axios.post("VITE_BACKEND_URL/v1/login",
+       const res =   await axios.post(`${import.meta.env.VITE_BACKEND_URL}/v1/login`,
         Data
       );
        console.log("response from login :", res.data.username);
