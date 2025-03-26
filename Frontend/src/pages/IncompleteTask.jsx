@@ -23,7 +23,9 @@ function IncompleteTask() {
       fetch(); 
       },[])
   
-      console.log(data);
+      console.log("data comming from :", data);
+
+      
     
   return (
     <div>

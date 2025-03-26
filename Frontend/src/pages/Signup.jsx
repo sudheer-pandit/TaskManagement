@@ -9,6 +9,7 @@ function Signup() {
   if(isLoggedin === true){
     history("/")
   }
+
  
   const [Data, setData] = useState({username:"",email:"",  password:""})
  
@@ -18,6 +19,7 @@ function Signup() {
   }
   const submit = async(e)=>{
     e.preventDefault()
+    
     try {
       
       if(Data.username ===""|| Data.email ==="" || Data.password ===""){

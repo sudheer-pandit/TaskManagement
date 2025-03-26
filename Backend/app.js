@@ -11,7 +11,7 @@ const TaskApi = require("./route/task");
 
 app.use(cors(
   {
-    origin:["https://task-management-navy-psi.vercel.app"],
+    origin:["https://task-management-navy-psi.vercel.app", "http://localhost:5173"],
     methods:["POST", "GET"],
     credentials:true,
   }
