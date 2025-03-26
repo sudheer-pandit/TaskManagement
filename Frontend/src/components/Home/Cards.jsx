@@ -13,7 +13,7 @@ function Cards({home, setInput, data, fetch, setUpdatedData}) {
     };
     const handleCompleteTask =async(id)=>{
   try{
-    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/v2//update-complete-task/${id}`,
+    const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/v2/update-complete-task/${id}`,
       {},
       {headers}
      )
@@ -28,7 +28,7 @@ function Cards({home, setInput, data, fetch, setUpdatedData}) {
     
     const handleImportant =async(id)=>{
       try {
-        const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/v2//update-imp-task/${id}`,
+        const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/v2/update-imp-task/${id}`,
           {},
           {headers}
          )
